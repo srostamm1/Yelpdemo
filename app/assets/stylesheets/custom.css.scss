@@ -1,0 +1,29 @@
+.jumbotron {
+	background-color: #fdf8e1;
+	border: 1px solid #f2cde3;
+	h2 {
+		color: #c41200;
+		font-weight: bold;
+	}
+}
+
+.navbar-default {
+	.container-fluid{
+		background-color: #b70001;
+		.navbar-nav > li > a {
+			color: #ffffff;
+			font-size: 12px;
+			font-weight: bold;
+		}
+			.navbar-brand{
+			color: black;
+			font-size: 30px;
+			font-family: 'hobo std';
+			text-shadow: 2px 0 0 #fff;
+		}
+	}
+}
+.container-fluid {
+	padding: 10px 120px;
+
+}
