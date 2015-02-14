@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_restaurant
   before_action :authenticate_user!
   # GET /reviews
   # GET /reviews.json
@@ -17,6 +18,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @review.restaurant_id = @restaurant.id
+    
     respond_to do |format|
       if @review.save
         format.html { redirect_to root_path, notice: 'Review was successfully created.' }
@@ -58,6 +61,9 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
     end
 
+    def set_restaurant
+      @restaurant = Restaurant.find(params[:restaurant_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:rating, :comment)
