@@ -13,7 +13,7 @@
       <th>Phone</th>
       <th>Website</th>
       <% if user_signed_in? && current_user.admin? %>
-      <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-link" %>
+         <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-link" %>
       <th colspan="2"></th>
         <% end %>
     </tr>
@@ -36,7 +36,5 @@
 </table>
 
 <br>
-<% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-link" %>
-  <% end %>
+
 <%= image_tag "https://s3-us-west-1.amazonaws.com/sinatest1/Sherwan-Bob-Sina.png" %>
